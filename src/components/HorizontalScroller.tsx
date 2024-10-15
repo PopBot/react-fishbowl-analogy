@@ -24,15 +24,6 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({views}) => {
 		}
 	}, [currentIndex, views.length]);
 
-	const handleHorizontalScroll = React.useCallback(() => {
-		if (scrollerRef.current) {
-			const newIndex = Math.round(scrollerRef.current.scrollLeft / window.innerWidth);
-			if (newIndex !== currentIndex) {
-				setCurrentIndex(newIndex);
-			}
-		}
-	}, [currentIndex]);
-
 	useEffect(() => {
 		window.addEventListener('keydown', handleHorizontalKeyDown);
 
@@ -41,14 +32,6 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({views}) => {
 		};
 	}, [handleHorizontalKeyDown, currentIndex]);
 
-//	useEffect(() => {
-//		const scroller = scrollerRef.current;
-//		if (scroller) {
-//			scroller.addEventListener('scroll', handleHorizontalScroll);
-//
-//			return () => {
-//				scroller.removeEventListener('scroll',
-// handleHorizontalScroll); }; } }, [handleHorizontalScroll]);
 
 	useEffect(() => {
 		if (scrollerRef.current) {
