@@ -11,8 +11,20 @@
   flex: 0 0 100%;
   width: 100vw;
   height: 100vh;
+  /*  Optional  */
+   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+.scroller-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
 }
 
 .scroller-item {
-  height: 100%;
+  flex: 0 0 100vw;
+  scroll-snap-align: start;
+  width: 100vw;
+  height: 100vh;
 }
