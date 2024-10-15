@@ -11,8 +11,8 @@
   flex: 0 0 100%;
   width: 100vw;
   height: 100vh;
-  /*  Optional  */
-   scroll-behavior: smooth;
+  /*  Remove bottom horizontal scrollbar  */
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none;  /* For Internet Explorer and Edge */
@@ -25,6 +25,13 @@
 .scroller-item {
   flex: 0 0 100vw;
   scroll-snap-align: start;
+  width: 100vw;
+  height: 100vh;
+}
+
+.slide-container {
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
 }
