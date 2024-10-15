@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import HorizontalScroller from './components/HorizontalScroller';
+import './styles/basic.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+	const views = [
+		<div style={{backgroundColor: 'red', height: '100%'}}>View 1</div>,
+		<div style={{backgroundColor: 'blue', height: '100%'}}>View 2</div>,
+		<div style={{backgroundColor: 'green', height: '100%'}}>View 3</div>,
+		// Add more views as needed
+	];
+
+	return (
+		<div id={'app'}>
+			<HorizontalScroller views={views}/>
+		</div>
+	);
+};
 
 export default App;
+
